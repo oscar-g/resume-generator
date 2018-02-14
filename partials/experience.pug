@@ -1,0 +1,39 @@
+ul.exp
+    each e in exp
+        li: +exp(e)
+
+mixin exp(e)
+    div.exp__header
+        div #{e.title}
+        div #{e.info}
+        div: +monthYear(e.start)
+        if e.end
+            div: +monthYear(e.end)
+
+    ul.exp__details
+        each d in e.details
+            li #{d}    
+
+    ul.exp__proj
+        each p in e.projects
+            li: +proj(p)
+
+mixin proj(p)
+    .proj
+        div.proj__info
+            div #{p.title}
+            div #{p.info}
+            div: +monthYear(p.date)
+
+        ul.proj__details
+            each d in p.details
+                li #{d}
+            
+        ul.proj__tech
+            each t in p.tech
+                li #{i}
+
+mixin monthYear(d)
+    div
+        div month: #{d.m}
+        div year: #{d.y}

@@ -1,10 +1,13 @@
 extends layouts/base.pug
 
-block biogrphy
+block biography
+    h1 Biography
     include partials/biography.pug
 
 block experience
-    include partials/experience.pug
+    h1 Experience
+    include partials/experience-list.pug
 
 block education
-    include partials/education.pug
+    h1 Education
+    include partials/education-list.pug

@@ -1,0 +1,19 @@
+mixin exp(e)
+    .exp
+        .exp__header
+            div #{e.title}
+            div: +monthYear(e.start)
+            if e.end
+                div: +monthYear(e.end)
+
+        if e.info
+            div.exp__info.info
+                p #{e.info}
+
+        +list(e.details, 'exp__details detail-list')
+        
+        //- +projList(e.projects)
+        if e.projects && e.projects.length > 0
+            ul.exp__proj.proj-list
+                each p in e.projects
+                    li: +proj(p)

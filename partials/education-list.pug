@@ -1,0 +1,7 @@
+ul.edu-list
+    for e in edu
+        li.edu
+            div #{e.school}
+            div #{e.degree}
+            div: +monthYear(e.grad)
+            +list(e.details, 'detail-list')

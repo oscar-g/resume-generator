@@ -1,0 +1,15 @@
+mixin proj(p)
+    .proj
+        div.proj__info
+            div #{p.title}
+            div: +monthYear(p.date)
+            div #{p.company}
+            if p.url
+                a(href="#{p.url}") #{p.url}
+
+        if p.info
+            div.proj__info
+                p #{p.info}
+
+        +list(p.details, 'proj__details detail-list')
+        +list(p.tech, 'proj__tech tech-list')

@@ -1,7 +1,7 @@
 mixin proj(p)
-    .proj
-        div.proj__info
-            div #{p.title}
+    article.proj
+        header.proj__info
+            h2 #{p.title}
             div: +monthYear(p.date)
             div #{p.company}
             if p.url
@@ -11,5 +11,5 @@ mixin proj(p)
             div.proj__info
                 p #{p.info}
 
-        +list(p.details, 'proj__details detail-list')
-        +list(p.tech, 'proj__tech tech-list')
+        +listSectionOpt('proj__details', 'Project Details', p.details, 'detail-list')
+        +listSectionOpt('proj__tech', 'Technologies Used', p.tech, 'tech-list')

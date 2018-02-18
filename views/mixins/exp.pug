@@ -1,7 +1,7 @@
 mixin exp(e)
-    .exp
-        .exp__header
-            div #{e.title}
+    article.exp
+        header.exp__header
+            h2 #{e.title}
             div: +monthYear(e.start)
             if e.end
                 div: +monthYear(e.end)
@@ -10,10 +10,11 @@ mixin exp(e)
             div.exp__info.info
                 p #{e.info}
 
-        +list(e.details, 'exp__details detail-list')
-        
+        +listOpt(e.details, 'exp__details detail-list')
+
         //- +projList(e.projects)
         if e.projects && e.projects.length > 0
-            ul.exp__proj.proj-list
-                each p in e.projects
+            section.exp__proj
+                h2 Projects
+                ul.proj-list: each p in e.projects
                     li: +proj(p)

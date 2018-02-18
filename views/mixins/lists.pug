@@ -1,6 +1,13 @@
-mixin list(items, className)
-    if items && items.length > 0
-        ul(class=className)
-            each i in items
-                li #{i}
+mixin list(list, className)
+    ul(class=className): each i in list
+        li #{i}
 
+mixin listOpt(list, className) 
+    if list && list.length > 0
+        +list(list, className)
+
+mixin listSectionOpt(className, title, list, listClassName)
+    if list && list.length > 0
+        section(class=className)
+            h2 #{title}
+            +list(list, listClassName)

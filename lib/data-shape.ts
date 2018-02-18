@@ -14,23 +14,24 @@ type Bio = {
     phone: string;
     email: string;
     info: string;
+    title: string;
 }
 
 type Experience = {
     title: string;
-    info: string;
+    company: string;
     start: MonthYear;
     end?: MonthYear;
-    details: string[];
-    projects: Project[];
+    info?: string;
+    details?: string[];
+    projects?: Project[];
 }
 
 type Education = {
     school: string;
     degree: string;
-    details: string[];
-    start: MonthYear;
-    end?: MonthYear;
+    grad: MonthYear;
+    details?: string[];
 }
 
 type Project = {

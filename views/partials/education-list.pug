@@ -5,6 +5,7 @@ ul.edu-list: for e in edu
                 h2.edu__org #{e.school}
                 h3.edu__deg #{e.degree}
             .column.has-text-right
-                div: +monthYear(e.grad)
+                div: +dateRange(e.start, e.end)                        
+                div #{e.location}
 
         +listOpt(e.details, 'detail-list')

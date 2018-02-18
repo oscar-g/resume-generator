@@ -32,7 +32,9 @@ type Experience = {
 type Education = {
   school: string;
   degree: string;
-  grad: MonthYear;
+  start: MonthYear;
+  end?: MonthYear;
+  location: string;
   details?: string[];
 };
 

@@ -6,10 +6,8 @@ mixin exp(e)
                 h3.exp__title #{e.title}
 
             .column.has-text-right
-                div: +monthYear(e.start)
-                if e.end
-                    div: +monthYear(e.end)
-                div: #{e.location}
+                div: +dateRange(e.start, e.end)
+                div #{e.location}
 
         if e.info
             div.exp__info.info

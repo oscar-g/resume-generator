@@ -1,4 +1,18 @@
+-
+    var months = [
+        'Jan.', 'Feb.', 'Mar.', 'Apr.',
+        'May', 'Jun.', 'Jul.', 'Aug.',
+        'Sep.', 'Oct.', 'Nov.', 'Dec.',
+    ];
+
 mixin monthYear(d)
-    div
-        div month: #{d.m}
-        div year: #{d.y}
+    span #{months[d.m - 1]} #{d.y}
+
+mixin dateRange(d1, d2)
+    span.date-range
+        +monthYear(d1)
+        if d2
+            span|&ensp;&ndash;&ensp;
+            +monthYear(d2)
+        else
+            span|&ensp;&ndash;&ensp;Present

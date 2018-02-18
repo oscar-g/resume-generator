@@ -11,6 +11,7 @@ type Bio = {
   fname: string;
   lname: string;
   fullName: string;
+  location: string;
   phone: string;
   email: string;
   info: string;
@@ -22,6 +23,7 @@ type Experience = {
   company: string;
   start: MonthYear;
   end?: MonthYear;
+  location: string;
   info?: string;
   details?: string[];
   projects?: Project[];

@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run clean && npm run build && npm run render",
+    "start": "npm run clean && npm run build:src && npm run render && npm run build:styles",
     "clean": "rm -rf build",
-    "build": "tsc",
+    "build:src": "tsc",
+    "build:styles": "node-sass --source-map-embed --include-path ./node_modules/bulma/ ./styles/screen.scss ./build/screen.css",
     "render": "node ./build/src/index.js"
   },
   "author": "",
@@ -15,6 +16,8 @@
   "devDependencies": {
     "@types/node": "^9.4.6",
     "@types/pug": "^2.0.4",
+    "bulma": "^0.6.2",
+    "node-sass": "^4.7.2",
     "pug": "^2.0.0-rc.4",
     "tslint": "^5.9.1",
     "tslint-config-airbnb": "^5.6.0",

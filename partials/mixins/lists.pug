@@ -1,6 +1,6 @@
 mixin list(items, className)
     if items && items.length > 0
-        ul(class="#{className}")
+        ul(class=className)
             each i in items
                 li #{i}
 

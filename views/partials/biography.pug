@@ -1,6 +1,10 @@
 section.bio
-    h1 #{bio.fullName}
-    div #{bio.phone}
-    div #{bio.email}
-    p #{bio.title}
-    p #{bio.info}
+    .columns
+        .column
+            h1.bio__name #{bio.fullName}
+            p.bio__title #{bio.title}
+        .column.has-text-right
+            div: a.bio__phone #{bio.phone}
+            div: a.bio__email(href=`mailto:${bio.email}`) #{bio.email}
+    .content
+        p #{bio.info}

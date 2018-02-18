@@ -1,0 +1,43 @@
+
+// size 1 
+.bio__name {
+    @extend .is-size-1;
+    color:red;
+}
+
+// size 2
+
+// main section headings
+.cv > section > h1 {
+    @extend .is-size-2;
+    color: blue
+}
+
+// size 3
+.exp__comp,
+.exp__proj > h2,
+.edu__org {
+    @extend .is-size-3;
+    color: yellow
+}
+
+// size 4 
+.bio__title,
+.exp__title,
+.proj__title,
+.edu__deg {
+    @extend .is-size-4;
+    color: green;
+    // text-decoration: underline;
+}
+
+//
+//
+// theme
+//
+
+// hide the first section heading
+.cv > section:first-child > h1 {
+    @extend .is-hidden-touch;
+    @extend .is-hidden-tablet;
+}

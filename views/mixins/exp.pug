@@ -1,10 +1,15 @@
 mixin exp(e)
     article.exp
-        header.exp__header
-            h2 #{e.title}
-            div: +monthYear(e.start)
-            if e.end
-                div: +monthYear(e.end)
+        header.exp__header: .columns
+            .column
+                h2.exp__comp #{e.company}
+                h3.exp__title #{e.title}
+
+            .column.has-text-right
+                div: +monthYear(e.start)
+                if e.end
+                    div: +monthYear(e.end)
+                div: #{e.location}
 
         if e.info
             div.exp__info.info
@@ -12,7 +17,6 @@ mixin exp(e)
 
         +listOpt(e.details, 'exp__details detail-list')
 
-        //- +projList(e.projects)
         if e.projects && e.projects.length > 0
             section.exp__proj
                 h2 Projects

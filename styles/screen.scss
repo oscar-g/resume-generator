@@ -1,31 +1,4 @@
 @import 'bulma.sass';
 
-//
-// typpgraphy - size 1
-//
-
-// main section headings
-.cv > section > h1 { @extend .is-size-1; }
-
-//
-// typography - size 2
-//
-
-.exp__header,
-.exp__proj > h2 { @extend .is-size-2; }
-
-//
-// typography - size 3
-//
-
-.exp__proj .proj__info > h2 { @extend .is-size-3; }
-
-//
-// typography - theme
-//
-
-// hide first section heading
-.cv > section:first-child > h1 {
-    @extend .is-hidden-touch;
-    @extend .is-hidden-tablet;
-}
+@import 'base/_layout.scss';
+@import 'base/_typography.scss';

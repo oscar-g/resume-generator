@@ -1,16 +1,10 @@
-mixin exp(e)
+mixin exp(company, location, title, start, end, details)
     article.exp
         header.exp__header: .columns
             .column
-                h2.exp__comp #{e.company}
-                h3.exp__title #{e.title}
-
+                h2.exp__comp #{company}
+                h3.exp__title #{title}
             .column.has-text-right
-                div: +dateRange(e.start, e.end)
-                div #{e.location}
-
-        if e.info
-            div.exp__info.info
-                p #{e.info}
-
-        +listOpt(e.details, 'exp__details detail-list')
+                div: +dateRange(start, end)
+                div #{location}
+        +listOpt(details, 'exp__details detail-list')

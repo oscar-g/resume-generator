@@ -1,4 +1,7 @@
 .cv {
     @extend .container;
     @extend .is-widescreen;
+
+    // set smaller container size
+    max-width: $desktop - (2 * $gap);
 }

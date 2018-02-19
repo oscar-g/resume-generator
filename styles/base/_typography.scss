@@ -1,40 +1,67 @@
+$SECTION_HEADING: '.cv > section > h1';
+$ASSOCIATIONS: '.exp__comp, .proj__comp, .edu__org';
+$ASSOCIATION_TITLES: '.bio__title, .exp__title, .edu__deg, .proj__title';
 
-// size 1 
+/* 1. font */
+
+// use serif family
+.detail-list,
+.bio .content {
+    font-family: $family-serif;
+}
+
+/* 2. Sizes */
+
+// largest type on page is biography name
 .bio__name {
-    @extend .is-size-1;
-    color:red;
-}
-
-// size 2
-
-// main section headings
-.cv > section > h1 {
     @extend .is-size-2;
-    color: blue
 }
 
-// size 3
-.exp__comp,
-.proj__comp,
-.edu__org {
-    @extend .is-size-3;
-    color: yellow
-}
-
-// size 4 
-.bio__title,
-.exp__title,
-.edu__deg,
-.proj__title {
+// second-largest are "associations" (company, organiation, school)
+#{$ASSOCIATIONS} {
     @extend .is-size-4;
-    color: green;
-    // text-decoration: underline;
 }
 
-//
-//
-// theme
-//
+// section headings are second-smallest
+#{$SECTION_HEADING} {
+    @extend .is-size-5;
+}
+
+// smallest are "association titles" (job title, project name, educ. degree)
+#{$ASSOCIATION_TITLES} {
+    @extend .is-size-6;
+}
+
+/* 3. Spacing, color, lines */
+
+// section headings are small, but well-spaced and bordered
+#{$SECTION_HEADING} {
+    padding: 0.333em 0 0.333em 1em;
+    margin: 0;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+}
+
+// emphasize association titles (builds heirarchy with content below)
+#{$ASSOCIATION_TITLES} {
+    font-style: italic;
+}
+// ..except the job title in bio section...
+.bio__title {
+    font-style: normal;
+    text-decoration: none;
+}
+
+// section item spacing
+.exp-list, .edu-list, .proj-list {
+    & > li { padding-top: 1em; }
+    // & > li:first-child { padding-top: 2em; }
+    & > li:last-child{ padding-bottom: 1em; }
+}
+
+
+
+/* 4. Responsive, sr only */
 
 // hide the first section heading
 .cv > section:first-child > h1 {

@@ -1,5 +1,8 @@
 .inline-list {
     @extend .level;
+
+    // override a few styles from framework
+    margin-bottom: 0!important;
     justify-content: flex-start;
 
     & > h2,

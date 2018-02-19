@@ -14,8 +14,8 @@ type Bio = {
   location: string;
   phone: string;
   email: string;
-  info: string;
   title: string;
+  info?: string;
 };
 
 type Experience = {
@@ -24,7 +24,6 @@ type Experience = {
   start: MonthYear;
   end?: MonthYear;
   location: string;
-  info?: string;
   details?: string[];
 };
 

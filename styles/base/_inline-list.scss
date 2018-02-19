@@ -1,0 +1,31 @@
+.inline-list {
+    @extend .level;
+    justify-content: flex-start;
+
+    & > h2,
+    & > ul {
+        @extend .level-item;
+        flex-grow: 0!important;
+    }
+
+    & > h2 {
+        &:after {
+            display: inline-block;
+            content: ": ";
+            white-space: pre;
+        }
+    }
+    
+    & > ul > li {
+
+        &::after {
+            display: inline-block;
+            content: ", ";
+            white-space: pre;
+        }
+
+        &:last-child::after {
+            content: none;
+        }
+    }
+}

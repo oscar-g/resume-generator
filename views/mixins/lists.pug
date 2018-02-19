@@ -1,7 +1,9 @@
+mixin ul(list, className)
+    ul(class=className): each i in list
+        li #{i}
+
 mixin list(list, className)
-    .content
-        ul(class=className): each i in list
-            li #{i}
+    .content: +ul(list, className)
 
 mixin listOpt(list, className) 
     if list && list.length > 0
@@ -12,3 +14,9 @@ mixin listSectionOpt(className, title, list, listClassName)
         section(class=className)
             h2 #{title}
             +list(list, listClassName)
+
+mixin listSectionOptInline(className, title, list, listClassName)
+    if list && list.length > 0
+        section(class=`inline-list ${className}`)
+            h2 #{title}
+            +ul(list, listClassName)

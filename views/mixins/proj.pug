@@ -2,8 +2,8 @@ mixin proj(p)
     article.proj
         header: .columns
             .column
-                h2.proj__title #{p.title}
-                h3.proj__comp #{p.company}
+                h2.proj__comp #{p.company}
+                h3.proj__title #{p.title}
                 if p.url
                     a(href=p.url) #{p.url}
 
@@ -14,5 +14,5 @@ mixin proj(p)
             .proj__info.content
                 p #{p.info}
 
-        +listSectionOpt('proj__details', 'Project Details', p.details, 'detail-list')
-        +listSectionOpt('proj__tech', 'Technologies Used', p.tech, 'tech-list')
+        +listSectionOptInline('proj__tech', 'Technologies', p.tech, 'tech-list')
+        +listSectionOpt('proj__details', 'Project Contributions', p.details, 'detail-list')

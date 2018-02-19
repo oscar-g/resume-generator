@@ -5,7 +5,7 @@ mixin proj(p)
                 h2.proj__title #{p.title}
                 h3.proj__comp #{p.company}
                 if p.url
-                    a(href="#{p.url}") #{p.url}
+                    a(href=p.url) #{p.url}
 
             .column.has-text-right
                 div: +monthYear(p.date)

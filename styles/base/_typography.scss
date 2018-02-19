@@ -15,7 +15,7 @@
 
 // size 3
 .exp__comp,
-.exp__proj > h2,
+.proj__title,
 .edu__org {
     @extend .is-size-3;
     color: yellow
@@ -24,8 +24,8 @@
 // size 4 
 .bio__title,
 .exp__title,
-.proj__title,
-.edu__deg {
+.edu__deg,
+.proj__comp {
     @extend .is-size-4;
     color: green;
     // text-decoration: underline;

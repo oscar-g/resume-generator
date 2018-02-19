@@ -26,7 +26,6 @@ type Experience = {
   location: string;
   info?: string;
   details?: string[];
-  projects?: Project[];
 };
 
 type Education = {

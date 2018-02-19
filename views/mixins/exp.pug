@@ -14,9 +14,3 @@ mixin exp(e)
                 p #{e.info}
 
         +listOpt(e.details, 'exp__details detail-list')
-
-        if e.projects && e.projects.length > 0
-            section.exp__proj
-                h2 Projects
-                ul.proj-list: each p in e.projects
-                    li: +proj(p)

@@ -1,0 +1,43 @@
+// custom includes (bulma overrides)`
+@import 'inc/_variables';
+@import 'inc/_libs';
+
+// bulma
+@import 'bulma.sass';
+
+// base
+@import 'base/_layout';
+@import 'base/_typography';
+
+// modules
+@import 'modules/_asc';
+@import 'modules/_cv';
+@import 'modules/_cv-section';
+@import 'modules/_cv-list';
+@import 'modules/_tech-list';
+
+// sections
+@import 'sections/_biography';
+@import 'sections/_project';
+@import 'sections/_experience';
+
+// themes
+@import '_common';
+@import '_screen';
+
+// debug extras
+@if ($debug-on == true and $debug-use-grid == true) {
+    html { position: relative; }
+    html::before {
+        content: " ";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+        z-index: 100;
+
+        background: repeating-linear-gradient(transparent 0px, transparent ($debug-grid-size - 1px), $debug-grid-color ($debug-grid-size - 1px), $debug-grid-color $debug-grid-size);
+    }
+}

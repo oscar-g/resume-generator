@@ -1,70 +1,81 @@
-$SECTION_HEADING: '.cv > section > h1';
-$ASSOCIATIONS: '.exp__comp, .proj__comp, .edu__org';
-$ASSOCIATION_TITLES: '.bio__title, .exp__title, .edu__deg, .proj__title, .exp__location';
+// typography
+// @todo use variables for everything here
 
-/* 1. font */
+// line heights
 
-// use serif family
-.detail-list,
-.bio .content {
-    font-family: $family-serif;
+.is-size-1 {
+    line-height: $body-line-height * map-get($line-heights, 1);
 }
 
-/* 2. Sizes */
+.is-size-2 {
+    line-height: $body-line-height * map-get($line-heights, 2);
+}
 
-// largest type on page is biography name
+.is-size-3 {
+    line-height: $body-line-height * map-get($line-heights, 3);
+}
+
+.is-size-4 {
+    line-height: $body-line-height * map-get($line-heights, 4);
+}
+
+// sizes
+
+// largest is bio name
 .bio__name {
+    @extend .is-size-1;
+
+    // emphesize and constrain
+    color: $cv-bio-name-color;
+    font-weight: 800;
+    width: 200px;
+    margin-bottom: $space-y;
+}
+
+// "association names" (company, organiation, school)
+.asc-name {
     @extend .is-size-2;
+
+    text-decoration: $asc-name-decoration;
+    margin: $asc-name-margin;
+    color: $asc-name-color;
+    font-weight: $asc-name-weight;
 }
 
-// second-largest are "associations" (company, organiation, school)
-#{$ASSOCIATIONS} {
-    @extend .is-size-4;
+// "association titles" (job title, project name, educ. degree)
+.asc-title,
+.tech-list {
+    @extend .is-size-3;
 }
 
-// section headings are second-smallest
-#{$SECTION_HEADING} {
-    @extend .is-size-5;
-}
-
-// smallest are "association titles" (job title, project name, educ. degree)
-#{$ASSOCIATION_TITLES} {
-    @extend .is-size-6;
-}
-
-/* 3. Spacing, color, lines */
-
-// section headings are small, but well-spaced and bordered
-#{$SECTION_HEADING} {
-    padding: 0.333em 0 0.333em 1em;
-    margin: 0;
-    border-top: 1px solid;
-    border-bottom: 1px solid;
-}
-
-// emphasize association titles (builds heirarchy with content below)
-#{$ASSOCIATION_TITLES} {
+.tech-list {
     font-style: italic;
-}
-// ..except the job title in bio section...
-.bio__title {
-    font-style: normal;
-    text-decoration: none;
+
 }
 
-// section item spacing
-.exp-list, .edu-list, .proj-list {
-    & > li { padding-top: 1em; }
-    // & > li:first-child { padding-top: 2em; }
-    & > li:last-child{ padding-bottom: 1em; }
+.asc-title {
+    color: $asc-title-color;
+    font-weight: $asc-title-weight;
+    margin: $asc-title-margin;
 }
 
-
-
-/* 4. Responsive, sr only */
-
-// hide the first section heading
-.cv > section:first-child > h1 {
-    @extend .is-hidden-touch;
-    @extend .is-hidden-tablet;
+// association lists, details
+.cv-list > ul,
+.asc-info,
+.asc-links {
+    @extend .is-size-3;
 }
+
+// section headings
+.cvs__title {
+    @extend .is-size-3;
+
+    padding: $cvs-title-padding;
+    margin: $cvs-title-margin;
+    color: $cvs-title-color;
+}
+
+// {
+//     // font-family: $family-serif;
+//     // font-style: italic;
+// }

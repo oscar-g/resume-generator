@@ -1,0 +1,10 @@
+// https://github.com/jgthms/bulma/issues/721
+// https://uxdesign.cc/i-totally-forgot-about-print-style-sheets-f1e6604cfd6
+
+
+.cv > section > h1 {
+    padding: 0.25em 1em;
+    margin: 1em 0;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+}

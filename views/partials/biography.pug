@@ -1,12 +1,15 @@
-section.bio
-    .columns
+.cv-asc: article.bio
+    .columns.is-gapless
         .column
             h1.bio__name #{bio.fullName}
             p.bio__title #{bio.title}
         .column.has-text-right
-            div #{bio.location}
-            div.links-inline
-                a.bio__email(href=`mailto:${bio.email}`) #{bio.email}
-                a.bio__phone(href=`tel:+1${bio.phone}`) #{bio.phone}
-    .content
-        p #{bio.info}
+            +cvsItemInfo(null, null, bio.location, null, 'bio__location')
+            +cvsItemLinks([
+                [bio.email, `mailto:${bio.email}`, 'bio__email'],
+                [bio.phone, `mailto:${bio.phone}`, 'bio__phone'],
+            ])
+
+    if (bio.info && bio.info.length > 0)
+        .content
+            p #{bio.info}

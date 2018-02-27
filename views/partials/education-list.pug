@@ -1,11 +1,9 @@
 ul.edu-list: for e in edu
-    li: article.edu
-        header: .columns
+    li.cv-asc: article.edu
+        header: .columns.is-gapless
             .column
-                h2.edu__org #{e.school}
-                h3.edu__deg #{e.degree}
-            .column.has-text-right
-                div: +dateRange(e.start, e.end)                        
-                div #{e.location}
-
-        +listOpt(e.details, 'detail-list')
+                h2.edu__org.asc-name #{e.school}
+                h3.edu__deg.asc-title #{e.degree}
+            .column
+                +cvsItemInfo(e.start, e.end, e.location, 'edu__date', 'edu_location')
+        +listSectionOpt(e.details, 'Achievements', 'edu__achv')

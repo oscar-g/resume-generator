@@ -1,0 +1,28 @@
+// a:hover,
+// a:focus
+// a:visited:hover {
+//     color:
+// }
+
+// smooth link
+a[href] {
+    transition-duration: $speed;
+    transition-property: color;
+    transition-timing-function: $easing;
+}
+
+// inline text and icon
+.icon-link {
+    span {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 1rem;
+    }
+
+    .icon {
+        &:hover {
+            // color: i
+        }
+    }
+
+}

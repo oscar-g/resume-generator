@@ -1,18 +1,17 @@
 mixin proj(p)
     article.proj
-        header: .columns
+        header: .columns.is-gapless
             .column
-                h2.proj__comp #{p.company}
-                h3.proj__title #{p.title}
+                h2.proj__comp.asc-name #{p.company}
+                h3.proj__title.asc-title #{p.title}
                 if p.url
                     a(href=p.url) #{p.url}
-
-            .column.has-text-right
-                div: +monthYear(p.date)
+            .column
+                +cvsItemInfo(p.date, null, null, 'proj__date', null, true)
 
         if p.info
             .proj__info.content
                 p #{p.info}
 
-        +listSectionOptInline('proj__tech', 'Technologies', p.tech, 'tech-list')
-        +listSectionOpt('proj__details', 'Project Contributions', p.details, 'detail-list')
+        +listSectionOptInline(p.tech, 'Technologies', 'proj__tech','tech-list')
+        +listSectionOpt(p.details, 'Contributions', 'proj__details')

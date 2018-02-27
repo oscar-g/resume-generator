@@ -1,0 +1,18 @@
+mixin cvsItemInfo(start, end, location, dateClass, locationClass)
+    if start || location
+        .asc-info
+            if start
+                div(class=`asc-date ${dateClass}`)
+                    +dateRange(start, end)
+            if location
+                div(class=`asc-loc ${locationClass}`) #{location}
+
+mixin cvsItemLink(label, href, className, iconName)
+    a(class=className, href=href)
+        span #{label}
+        +iconOpt(iconName)
+
+mixin cvsItemLinks(links)
+    if links && links.length && links.length > 0
+        .asc-links: each l in links
+            +cvsItemLink(...l)

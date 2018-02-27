@@ -1,0 +1,17 @@
+.cvs {
+    background-color: $cvs-background-color;
+    box-shadow: $cvs-box-shadow;
+    padding: 0 $space-x ($space-y);
+    
+    // consistent spacing for adjacent sections
+    & + & { margin-top: $space-y; }
+
+    // section title
+    // &__title {}
+
+    // hide the first section title
+    &:first-child .cvs__title {
+        @extend .is-hidden-touch;
+        @extend .is-hidden-tablet;
+    }
+}

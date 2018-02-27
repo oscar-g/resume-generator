@@ -1,0 +1,16 @@
+.cv {
+    background-color: $cv-background-color;
+    padding: $cv-padding;
+    margin: $cv-margin;
+}
+
+.cv-asc {
+    & + & { margin-top: $cv-asc-space; }
+    
+    .asc-info { text-align: right; }
+
+    .asc-links {
+        display: flex;
+        flex-direction: column;
+    }
+}

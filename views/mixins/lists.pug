@@ -3,20 +3,20 @@ mixin ul(list, className)
         li #{i}
 
 mixin list(list, className)
-    .content: +ul(list, className)
+    +ul(list, className)
 
-mixin listOpt(list, className) 
-    if list && list.length > 0
-        +list(list, className)
+//- mixin listOpt(list, className) 
+//-     if list && list.length > 0
+//-         +list(list, className)
 
-mixin listSectionOpt(className, title, list, listClassName)
+mixin listSectionOpt(list, title, className, listClassName = '')
     if list && list.length > 0
-        section(class=className)
+        section(class=`cv-list ${className}`)
             h2 #{title}
             +list(list, listClassName)
 
-mixin listSectionOptInline(className, title, list, listClassName)
+mixin listSectionOptInline(list, title, className, listClassName)
     if list && list.length > 0
-        section(class=`inline-list ${className}`)
+        section(class=`cv-list cv-list--inline ${className}`)
             h2 #{title}
-            +ul(list, listClassName)
+            +list(list, listClassName)

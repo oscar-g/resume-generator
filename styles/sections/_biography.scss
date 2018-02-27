@@ -1,0 +1,20 @@
+.bio {
+    padding-top: $space-y;
+    margin-bottom: $space-y * 3;
+}
+
+// stacked links
+.bio__links {
+    & > a {
+        display: block;
+    }
+}
+
+// theme
+
+.bio__title {
+    @extend .asc-name;
+    
+    // override parent
+    text-decoration: none!important;
+}

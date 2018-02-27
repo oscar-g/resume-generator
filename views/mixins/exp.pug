@@ -1,10 +1,8 @@
 mixin exp(company, location, title, start, end, details)
     article.exp
-        header.exp__header: .columns
+        header.exp__header: .columns.is-gapless
             .column
-                h2.exp__comp #{company}
-                h3.exp__title #{title}
-            .column.has-text-right
-                div.exp__date: +dateRange(start, end)
-                div.exp__location #{location}
-        +listOpt(details, 'exp__details detail-list')
+                h2.exp__comp.asc-name #{company}
+                h3.exp__title.asc-title #{title}
+            .column: +cvsItemInfo(start, end, location, 'exp__date', 'exp__location')
+        +listSectionOpt(details, 'Responsibilities', 'exp__details')

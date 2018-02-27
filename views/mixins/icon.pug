@@ -1,0 +1,7 @@
+mixin icon(name)
+    span.icon.icon-sm
+        span.oi(data-glyph=name)
+
+mixin iconOpt(nameOpt)
+    if nameOpt
+        +icon(nameOpt)

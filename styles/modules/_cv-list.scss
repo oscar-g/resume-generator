@@ -1,0 +1,71 @@
+// section with heading and list
+.cv-list {
+    @if ($debug-on == true) {
+        border: 1px solid black;
+        & > ul { border: 1px dashed red; }
+    }
+
+    // override framework
+    margin-bottom: 0!important;
+
+    // consistent spacing for adjacent modules
+    & + & { margin-top: $space-y / 2; }
+
+    // heading
+    // & > h2 {}
+
+    // list
+    & > ul {
+        list-style: disc outside;
+        padding: $cv-list-padding;
+        margin: $cv-list-margin;
+
+        & > li + li {
+            margin-top: $space-y / 2;
+        }
+    }
+
+    // inline variation
+    &--inline {
+        @extend .level;
+        
+        // override framework
+        justify-content: flex-start;
+
+        // override parent class
+        & > h2 { margin-bottom: 0; }
+        & > ul {
+            list-style: none;
+            padding: $cv-inline-list-padding;
+            margin: $cv-inline-list-margin;
+
+            & > li { margin-top: 0 !important; }
+        }
+
+        & > h2,
+        & > ul {
+            @extend .level-item;
+            flex-grow: 0!important;
+        }
+
+        & > h2 {
+            &:after {
+                display: inline-block;
+                content: ": ";
+                white-space: pre;
+            }
+        }
+
+        & > ul > li {
+            &::after {
+                display: inline-block;
+                content: ", ";
+                white-space: pre;
+            }
+
+            &:last-child::after {
+                content: none;
+            }
+        }
+    }
+}

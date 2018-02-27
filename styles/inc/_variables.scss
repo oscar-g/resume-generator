@@ -1,0 +1,92 @@
+// @todo - how to copy this per theme?
+
+// bulma variables, functions
+@import 'sass/utilities/initial-variables';
+@import 'sass/utilities/functions';
+
+// typography variables
+$family-sans-serif:'Raleway';
+$family-serif: 'Georgia', serif;
+
+@import 'modularscale';
+
+$modularscale: (
+    base: 1rem,
+    ratio: $fourth,
+);
+
+$size-1: ms(4);
+$size-2: ms(2);
+$size-3: ms(1);
+$size-4: ms(0);
+
+
+// html font size, weridly named in bulma
+$body-size: 12px;
+// @todo fix this in bulma (add variables for html and body font size)
+body { font-size: ms(0) !important; }
+
+// reset to one height
+$body-line-height: ms(1);
+// map of (size, factor)
+$line-heights: (
+    1: 2,
+    2: 1,
+    3: 1,
+    4: 1,
+);
+
+// derived variables - import and override
+@import "sass/utilities/derived-variables.sass";
+
+// spacing
+$space-y: $body-line-height;
+$space-x: $space-y * map-get($modularscale, ratio);
+
+// colors
+$link-hover: $purple;
+
+$grey-dark: rgb(100, 100, 100);
+$grey-light: rgb(235, 235, 235);
+$white-bis: rgb(250, 250, 250);
+
+$body-color: hsl(217, 5%, 30%);
+$body-background-color: $grey-light;
+
+// cv colors
+$cv-background-color: transparent;
+$cv-bio-name-color:  hsl(217, 5%, 35%);
+$cvs-background-color: $white-bis;
+$cvs-box-shadow: 0px 3px 2px -2px $grey-dark;
+$cvs-title-color: hsl(217, 5%, 65%);
+
+// cv spacing & sizing
+$cv-width: ms(14);
+$cv-padding: ($space-y * 3) 0 0;
+$cv-margin: 0 auto ($space-y * 3);
+
+$cvs-title-padding: $space-y 0 0;
+$cvs-title-margin: 0 0 $space-y;
+
+$cv-list-padding: 0 0 0 $space-x;
+$cv-list-margin: 0 0 0 0;
+$cv-inline-list-padding: 0;
+$cv-inline-list-margin: 0;
+
+// cv associations
+$cv-asc-space: $space-y * 1.5;
+
+$asc-name-decoration: none;
+$asc-name-margin: 0 0 ($space-y / 2) 0;
+$asc-name-weight: 700;
+$asc-name-color: hsl(217, 5%, 35%);
+
+$asc-title-margin: 0 0 ($space-y / 2) 0;
+$asc-title-weight: 400;
+$asc-title-color: hsl(217, 5%, 35%);
+
+// debugging
+$debug-on: false;
+$debug-use-grid: true;
+$debug-grid-color: red;
+$debug-grid-size: $body-size * $space-y / 1rem;

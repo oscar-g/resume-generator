@@ -1,5 +1,5 @@
 .bio {
-    padding-top: $space-y;
+    // padding-top: $space-y;
     margin-bottom: $space-y * 3;
 }
 
@@ -10,11 +10,17 @@
     }
 }
 
+// layout or right-side content
+.bio .column.has-text-right {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+
+
 // theme
 
-.bio__title {
-    @extend .asc-name;
-    
+.bio__title {    
     // override parent
     text-decoration: none!important;
 }

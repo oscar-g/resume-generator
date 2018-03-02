@@ -14,3 +14,9 @@
         flex-direction: column;
     }
 }
+
+.asc-links {
+    & > a + a {
+        margin-top: $space-y / 2;
+    }
+}

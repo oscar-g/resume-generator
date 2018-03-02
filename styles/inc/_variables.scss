@@ -1,3 +1,4 @@
+// @todo - organize and add ToC
 // @todo - how to copy this per theme?
 
 // bulma variables, functions
@@ -6,7 +7,8 @@
 
 // typography variables
 $family-sans-serif:'Raleway';
-$family-serif: 'Georgia', serif;
+// https://www.typewolf.com/site-of-the-day/fonts/raleway
+$family-serif: 'Libre Baskerville', serif;
 
 @import 'modularscale';
 
@@ -17,17 +19,17 @@ $modularscale: (
 
 $size-1: ms(4);
 $size-2: ms(2);
-$size-3: ms(1);
+$size-3: ms(0);
 $size-4: ms(0);
 
-
 // html font size, weridly named in bulma
-$body-size: 12px;
+$body-size: 14px;
 // @todo fix this in bulma (add variables for html and body font size)
 body { font-size: ms(0) !important; }
 
 // reset to one height
-$body-line-height: ms(1);
+$base-line-height: ms(1);
+$body-line-height: $base-line-height;
 // map of (size, factor)
 $line-heights: (
     1: 2,
@@ -44,31 +46,38 @@ $space-y: $body-line-height;
 $space-x: $space-y * map-get($modularscale, ratio);
 
 // colors
-$link-hover: $purple;
+$link: royalblue;
+$link-hover: tomato;
 
-$grey-dark: rgb(100, 100, 100);
-$grey-light: rgb(235, 235, 235);
-$white-bis: rgb(250, 250, 250);
+$grey-dark: hsl(210, 8%, 25%);
+$grey-light: hsl(197, 4%, 63%);
+$white-bis: linen; // ghostwhite;// #fefefe;
 
-$body-color: hsl(217, 5%, 30%);
-$body-background-color: $grey-light;
+$body-color:hsl(206, 18%, 15%);
+$body-background-color: $white-bis;
+// $body-background-gradient: linear-gradient(-22.5deg, lightsteelblue -25%, whitesmoke 100%);
+// $body-background-gradient: linear-gradient(to left, #BDBBBE 0%, #9D9EA3 100%), radial-gradient(88% 271%, rgba(255, 255, 255, 0.25) 0%, rgba(254, 254, 254, 0.25) 1%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(50% 100%, rgba(255, 255, 255, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%);
 
 // cv colors
 $cv-background-color: transparent;
-$cv-bio-name-color:  hsl(217, 5%, 35%);
-$cvs-background-color: $white-bis;
-$cvs-box-shadow: 0px 3px 2px -2px $grey-dark;
-$cvs-title-color: hsl(217, 5%, 65%);
+$cv-bio-name-color:  $grey-dark;
+$cvs-background-color: transparent; // $white-bis;
+$cvs-box-shadow: none; //2px 2px 0px 0px $grey-light;
+$cvs-title-color: $grey-light;
+$cvs-title-weight: 700;
+$cvs-title-transform: uppercase;
+$cvs-title-spacing: 1px;
 
 // cv spacing & sizing
 $cv-width: ms(14);
 $cv-padding: ($space-y * 3) 0 0;
 $cv-margin: 0 auto ($space-y * 3);
 
-$cvs-title-padding: $space-y 0 0;
-$cvs-title-margin: 0 0 $space-y;
+$cvs-padding: 0 $space-x;
+$cvs-title-padding: 0;
+$cvs-title-margin: 0 0 ($space-y);
 
-$cv-list-padding: 0 0 0 $space-x;
+$cv-list-padding: ($space-y / 2) 0 0 $space-x;
 $cv-list-margin: 0 0 0 0;
 $cv-inline-list-padding: 0;
 $cv-inline-list-margin: 0;
@@ -79,14 +88,20 @@ $cv-asc-space: $space-y * 1.5;
 $asc-name-decoration: none;
 $asc-name-margin: 0 0 ($space-y / 2) 0;
 $asc-name-weight: 700;
-$asc-name-color: hsl(217, 5%, 35%);
+$asc-name-color: $grey-dark;
 
-$asc-title-margin: 0 0 ($space-y / 2) 0;
+$asc-title-margin: 0;//0 0 ($space-y / 2) 0;
 $asc-title-weight: 400;
-$asc-title-color: hsl(217, 5%, 35%);
+$asc-title-color: $body-color;
+$asc-title-style: italic;
 
 // debugging
-$debug-on: false;
-$debug-use-grid: true;
 $debug-grid-color: red;
 $debug-grid-size: $body-size * $space-y / 1rem;
+
+// flags
+$use-debug: false; // see 'debug flags'
+$use-bg-gradient: false;
+
+// debug flags
+$debug-use-grid: true;

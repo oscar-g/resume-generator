@@ -2,12 +2,12 @@
     .columns.is-gapless
         .column
             h1.bio__name #{bio.fullName}
-            p.bio__title #{bio.title}
+            p.asc-title.bio__title #{bio.title}
         .column.has-text-right
             +cvsItemInfo(null, null, bio.location, null, 'bio__location')
             +cvsItemLinks([
-                [bio.email, `mailto:${bio.email}`, 'bio__email'],
                 [bio.phone, `mailto:${bio.phone}`, 'bio__phone'],
+                [bio.email, `mailto:${bio.email}`, 'bio__email'],
             ])
 
     if (bio.info && bio.info.length > 0)

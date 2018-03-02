@@ -1,6 +1,6 @@
 // section with heading and list
 .cv-list {
-    @if ($debug-on == true) {
+    @if ($use-debug == true) {
         border: 1px solid black;
         & > ul { border: 1px dashed red; }
     }
@@ -9,7 +9,7 @@
     margin-bottom: 0!important;
 
     // consistent spacing for adjacent modules
-    & + & { margin-top: $space-y / 2; }
+    // & + & { margin-top: $space-y / 2; }
 
     // heading
     // & > h2 {}
@@ -20,6 +20,7 @@
         padding: $cv-list-padding;
         margin: $cv-list-margin;
 
+        // consistent spacing for adjacent items
         & > li + li {
             margin-top: $space-y / 2;
         }

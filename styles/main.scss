@@ -8,6 +8,7 @@
 // base
 @import 'base/_layout';
 @import 'base/_typography';
+@import 'base/_page';
 
 // modules
 @import 'modules/_asc';
@@ -26,7 +27,7 @@
 @import '_screen';
 
 // debug extras
-@if ($debug-on == true and $debug-use-grid == true) {
+@if ($use-debug == true and $debug-use-grid == true) {
     html { position: relative; }
     html::before {
         content: " ";

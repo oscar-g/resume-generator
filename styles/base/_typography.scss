@@ -1,25 +1,41 @@
 // typography
+//
+// line height, per size
+// serif group
+// size & style groups
+//
 // @todo use variables for everything here
 
-// line heights
+
+// line height, per size
 
 .is-size-1 {
-    line-height: $body-line-height * map-get($line-heights, 1);
+    line-height: $base-line-height * map-get($line-heights, 1);
 }
 
 .is-size-2 {
-    line-height: $body-line-height * map-get($line-heights, 2);
+    // color: red!important;
+    line-height: $base-line-height * map-get($line-heights, 2);
 }
 
 .is-size-3 {
-    line-height: $body-line-height * map-get($line-heights, 3);
+    line-height: $base-line-height * map-get($line-heights, 3);
 }
 
 .is-size-4 {
-    line-height: $body-line-height * map-get($line-heights, 4);
+    line-height: $base-line-height * map-get($line-heights, 4);
 }
 
-// sizes
+// serif group
+
+.asc-title,
+.asc-info,
+.asc-links,
+.cv-list {
+    font-family: $family-serif;
+}
+
+// size & style
 
 // largest is bio name
 .bio__name {
@@ -46,24 +62,26 @@
 .asc-title,
 .tech-list {
     @extend .is-size-3;
-}
 
-.tech-list {
-    font-style: italic;
-
-}
-
-.asc-title {
     color: $asc-title-color;
     font-weight: $asc-title-weight;
+    font-style: $asc-title-style;
     margin: $asc-title-margin;
 }
 
-// association lists, details
+// association lists
 .cv-list > ul,
-.asc-info,
-.asc-links {
+.asc-date {
     @extend .is-size-3;
+}
+
+.asc-loc,
+.asc-links {
+    @extend .is-size-4;
+}
+
+.asc-loc {
+    font-style: italic;
 }
 
 // section headings
@@ -73,9 +91,7 @@
     padding: $cvs-title-padding;
     margin: $cvs-title-margin;
     color: $cvs-title-color;
+    font-weight: $cvs-title-weight;
+    text-transform: $cvs-title-transform;    
+    letter-spacing: $cvs-title-spacing;
 }
-
-// {
-//     // font-family: $family-serif;
-//     // font-style: italic;
-// }

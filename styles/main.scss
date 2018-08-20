@@ -21,10 +21,10 @@
 @import 'sections/_biography';
 @import 'sections/_project';
 @import 'sections/_experience';
+@import 'sections/_education';
 
 // themes
-@import '_common';
-@import '_screen';
+@import '_print';
 
 // debug extras
 @if ($use-debug == true and $debug-use-grid == true) {

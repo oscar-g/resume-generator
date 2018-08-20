@@ -95,6 +95,12 @@ $asc-title-weight: 400;
 $asc-title-color: $body-color;
 $asc-title-style: italic;
 
+// project 
+$project-tech-list-padding: ($space-y / 2) 0 0;
+
+// education
+$education-achv-section-padding: ($space-y / 2) 0 0;
+
 // debugging
 $debug-grid-color: red;
 $debug-grid-size: $body-size * $space-y / 1rem;

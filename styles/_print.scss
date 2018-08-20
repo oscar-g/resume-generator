@@ -1,10 +1,14 @@
-// https://github.com/jgthms/bulma/issues/721
-// https://uxdesign.cc/i-totally-forgot-about-print-style-sheets-f1e6604cfd6
+@media print {
+    html {
+        font-size: 12px;
+    }
 
+    .is-size-2 {
+        font-size: $size-3!important;
+        margin-bottom: 0;
+    }
 
-.cv > section > h1 {
-    padding: 0.25em 1em;
-    margin: 1em 0;
-    border-top: 1px solid;
-    border-bottom: 1px solid;
+    .cv-list > ul > li + li {
+        margin-top: 0;
+    }
 }

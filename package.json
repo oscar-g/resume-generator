@@ -7,15 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf build",
     "build": "npm run clean && npm run build:src && npm run build:styles",
-    "build:src": "tsc && node ./build/src/index.js",
-    "build:styles": "node-sass --source-map-embed --include-path ./node_modules/bulma/ --include-path ./node_modules/modularscale-sass/stylesheets ./styles/main.scss ./build/main.css",
-    "dev": "npm run build && npm run dev:src & npm run dev:styles",
-    "dev:src": "onchange './src/**/*' './views/**/*' './*.ts' './*.pug' -- npm run build:src",
-    "dev:styles": "onchange './styles/**/*' -- npm run build:styles"
+    "build:src": "tsc",
+    "build:styles": "node-sass --source-map-embed --include-path ./node_modules/bulma/ --include-path ./node_modules/modularscale-sass/stylesheets ./src/styles/main.scss ./build/main.css"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/dotenv": "^4.0.3",
     "@types/node": "^9.4.6",
     "@types/pug": "^2.0.4",
     "bulma": "^0.6.2",
@@ -27,5 +25,8 @@
     "tslint": "^5.9.1",
     "tslint-config-airbnb": "^5.6.0",
     "typescript": "^2.7.2"
+  },
+  "dependencies": {
+    "dotenv": "^6.0.0"
   }
 }

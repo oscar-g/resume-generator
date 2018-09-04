@@ -4,29 +4,38 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rm -rf build",
-    "build": "npm run clean && npm run build:src && npm run build:styles",
-    "build:src": "tsc",
-    "build:styles": "node-sass --source-map-embed --include-path ./node_modules/bulma/ --include-path ./node_modules/modularscale-sass/stylesheets ./src/styles/main.scss ./build/main.css"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/dotenv": "^4.0.3",
-    "@types/node": "^9.4.6",
+    "@types/node": "^9.6.31",
     "@types/pug": "^2.0.4",
+    "@vue/cli-plugin-babel": "^3.0.1",
+    "@vue/cli-plugin-typescript": "^3.0.1",
+    "@vue/cli-service": "^3.0.1",
     "bulma": "^0.6.2",
     "modularscale-sass": "^3.0.5",
-    "node-sass": "^4.7.2",
+    "node-sass": "^4.9.3",
     "onchange": "^3.3.0",
     "open-iconic": "^1.1.1",
-    "pug": "^2.0.0-rc.4",
-    "tslint": "^5.9.1",
-    "tslint-config-airbnb": "^5.6.0",
-    "typescript": "^2.7.2"
+    "pug": "^2.0.3",
+    "tslint": "^5.11.0",
+    "typescript": "^2.9.2",
+    "css-loader": "^1.0.0",
+    "pug-plain-loader": "^1.0.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "vue-template-compiler": "^2.5.17"
   },
   "dependencies": {
-    "dotenv": "^6.0.0"
+    "dotenv": "^6.0.0",
+    "vue": "^2.5.17",
+    "vue-class-component": "^6.0.0",
+    "vue-property-decorator": "^7.0.0",
+    "vuex": "^3.0.1"
   }
 }
